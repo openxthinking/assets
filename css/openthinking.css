@@ -1,0 +1,102 @@
+:root {
+/* Colors */
+    --ot-primary: #1922FB;
+    --ot-secondary: #FE8F8B;
+
+    --ot-color-1: #FFFFFF;
+    --ot-color-2: #F8F8F8;
+    --ot-color-3: #E1E1E1;
+    --ot-color-4: #BABABA;
+    --ot-color-5: #444444;
+    --ot-color-6: #333333;
+    --ot-color-7: #181818;
+    --ot-color-8: #000000;
+
+    --logoColor: var(--ot-color-8);
+    --logoShadow: rgba(0,0,0,.65);
+
+    --primary: var(--ot-primary);
+
+/* Globals */
+    --ot-borderColor: var(--ot-color-3);
+
+    --globalBorderColor: var(--ot-borderColor);
+    --globalBorder: var(--inputBorderWidth) var(--inputBorderStyle) var(--globalBorderColor);
+
+    --globalDuration: 500ms;
+    --globalTransition: all var(--globalDuration) var(--easeInOutExpo);
+
+    --backdropBg: rgba(23,27,34,.5);
+    --backdropBlur: saturate(180%) blur(10px);
+
+    --scrollbarTrack: var(--ot-color-2);
+    --scrollbarThumb: var(--ot-color-4);
+
+/* fs = Font size */
+    --fs-1: .75rem;
+    --fs-2: 1rem;
+    --fs-3: 1.1rem;
+    --fs-4: 1.25rem;
+    --fs-5: 1.5rem;
+    --fs-6: 2rem;
+    --fs-7: 2.5rem;
+    --fs-8: 3rem;
+    --fs-9: 3.5rem;
+    --fs-10: 4rem;
+
+/* ffs = Fluid font size */
+    --ffs-1: clamp(1.00rem, 0.78rem + 1.09vw, 1.88rem);
+    --ffs-2: clamp(1.20rem, 0.87rem + 1.63vw, 2.50rem);
+    --ffs-3: clamp(1.44rem, 0.97rem + 2.37vw, 3.33rem);
+    --ffs-4: clamp(1.73rem, 1.05rem + 3.39vw, 4.44rem);
+    --ffs-5: clamp(2.07rem, 1.11rem + 4.81vw, 5.92rem);
+    --ffs-6: clamp(2.49rem, 1.14rem + 6.76vw, 7.89rem);
+    --ffs-7: clamp(2.99rem, 1.10rem + 9.42vw, 10.52rem);
+    --ffs-8: clamp(3.58rem, 0.97rem + 13.06vw, 14.02rem);
+
+/* lh = Line height */
+    --lh-1: 0.95;
+    --lh-2: 1.1;
+    --lh-3: 1.25;
+    --lh-4: 1.375;
+    --lh-5: 1.5;
+    --lh-6: 1.75;
+    --lh-7: 2;
+
+/* Radius */
+    --radius-1: 1rem;
+    --radius-2: 2rem;
+    --radius-3: 3rem;
+    --radius-4: 4rem;
+    --radius-5: 5rem;
+    --radius-oval: 100%;
+    --radius-pill: 100vh;
+
+/* ar = Aspect ratio */
+    --ar-square: 1 / 1;
+    --ar-landscape: 4 / 3;
+    --ar-portrait: 3 / 4;
+    --ar-widescreen: 16 / 9;
+    --ar-ultrawide: 18 / 5;
+    --ar-golden: 1.6180 / 1;
+}
+
+[dark-mode] {
+    --ot-color-1: #000000;
+    --ot-color-2: #181818;
+    --ot-color-3: #333333;
+    --ot-color-4: #444444;
+    --ot-color-5: #BABABA;
+    --ot-color-6: #E1E1E1;
+    --ot-color-7: #F8F8F8;
+    --ot-color-8: #FFFFFF;
+
+    --ot-borderColor: var(--ot-color-3);
+    --globalBorderColor: var(--ot-borderColor);
+    --globalBorder: var(--inputBorderWidth) var(--inputBorderStyle) var(--globalBorderColor);
+
+    --scrollbarTrack: var(--ot-color-2);
+    --scrollbarThumb: var(--ot-color-4);
+
+    --logoColor: var(--ot-color-8);
+}
