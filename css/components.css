@@ -1,0 +1,97 @@
+/*** 
+ * Components 
+ */
+* { scrollbar-width: auto; scrollbar-color: var(--scrollbarThumb) var(--scrollbarTrack) }
+*::-webkit-scrollbar { width: 15px }
+*::-webkit-scrollbar-track { background: var(--scrollbarTrack) }
+*::-webkit-scrollbar-thumb { background-color: var(--scrollbarThumb); border-radius: var(--radius-2); border: 3px solid var(--scrollbarTrack) }
+
+/* fs = Font size */
+.fs-1 { font-size: var(--fs-1) }
+.fs-2 { font-size: var(--fs-2) }
+.fs-3 { font-size: var(--fs-3) }
+.fs-4 { font-size: var(--fs-4) }
+.fs-5 { font-size: var(--fs-5) }
+.fs-6 { font-size: var(--fs-6) }
+.fs-7 { font-size: var(--fs-7) }
+.fs-8 { font-size: var(--fs-8) }
+.fs-9 { font-size: var(--fs-9) }
+.fs-10 { font-size: var(--fs-10) }
+
+/* ffs = Fluid font size */
+.ffs-1 { font-size: var(--ffs-1) }
+.ffs-2 { font-size: var(--ffs-2) }
+.ffs-3 { font-size: var(--ffs-3) }
+.ffs-4 { font-size: var(--ffs-4) }
+.ffs-5 { font-size: var(--ffs-5) }
+.ffs-6 { font-size: var(--ffs-6) }
+.ffs-7 { font-size: var(--ffs-7) }
+.ffs-8 { font-size: var(--ffs-8) }
+
+/* lh = Line height */
+.lh-1 { line-height: var(--lh-1) }
+.lh-2 { line-height: var(--lh-2) }
+.lh-3 { line-height: var(--lh-3) }
+.lh-4 { line-height: var(--lh-4) }
+.lh-5 { line-height: var(--lh-5) }
+.lh-6 { line-height: var(--lh-6) }
+.lh-7 { line-height: var(--lh-7) }
+
+/* Radius */
+.radius-1 { border-radius: var(--radius-1) }
+.radius-2 { border-radius: var(--radius-2) }
+.radius-3 { border-radius: var(--radius-3) }
+.radius-4 { border-radius: var(--radius-4) }
+.radius-5 { border-radius: var(--radius-5) }
+.radius-oval { border-radius: var(--radius-oval) }
+.radius-pill { border-radius: var(--radius-pill) }
+
+/* Fit to width fluid text */
+[data-fit-text] {
+    --width: 100vw; /* Sized via the viewport, but the --width variable could be set by JS based on the element or parent's width. */
+    --scale: 0.9; /* Adjust scale depending on your exact font. */
+    font-size: calc(var(--width) / (var(--length, 1) * 0.5) * var(--scale, 1));
+    line-height: 1;
+    margin: 1rem 0;
+}
+
+/*** 
+ * Backdrop
+ */
+@supports (backdrop-filter:blur(12px)) { .backdrop { background: var(--backdropBg); -webkit-backdrop-filter: var(--backdropBlur); backdrop-filter: var(--backdropBlur) } }
+@supports not (backdrop-filter:blur(12px)) { .backdrop { background: var(--backdropBg) } }
+
+/*** 
+ * Dropdown caret 
+ */
+summary.dropdown-caret::-webkit-details-marker { display:none }
+
+.dropdown-caret { 
+    width: 100%; 
+    list-style: none; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: .7rem; 
+    user-select: none;
+    cursor: pointer;
+    padding: var(--buttonPadding);
+}
+
+.dropdown-caret::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    border-style: solid;
+    border-width: 6px 6px 0;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+
+details[open] > summary.dropdown-caret::after,
+.dropdown-caret[aria-expanded="true"]::after { transform: rotate(180deg) }
+
+.border-dotted { border: 2px dashed var(--ot-color-3); border-radius: var(--radius) }
