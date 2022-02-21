@@ -1,2 +1,0 @@
-# assets
-OpenThinking assets
