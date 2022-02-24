@@ -95,3 +95,95 @@ details[open] > summary.dropdown-caret::after,
 .dropdown-caret[aria-expanded="true"]::after { transform: rotate(180deg) }
 
 .border-dotted { border: 2px dashed var(--ot-color-3); border-radius: var(--radius) }
+
+/*
+ * Browser window
+ */
+browser-window {
+    --browserRadius: 2rem;
+    --browserBorder: 1px solid var(--inputBorderColor);
+    --browserAddressColor: var(--inputColor);
+    --browserFontSize: 1.2rem;
+    --browserShadow: 0px 5px 15px 1px rgba(0, 0, 0, .07);
+    --linkColor: var(--browserAddressColor);
+    --linkHover: var(--linkColor); 
+
+    display: block;
+    position: relative;
+    border-radius: var(--browserRadius);
+    border: var(--browserBorder);
+    margin: .5rem;
+    min-height: 200px;
+    background: var(--bgColor);
+    box-shadow: var(--browserShadow);
+    overflow: hidden;
+}
+
+browser-window .toolbar { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 var(--padding); 
+    border-bottom: var(--browserBorder);
+    background: var(--ot-color-2);
+}
+
+browser-window .buttons { 
+    display: inline-flex;
+    justify-self: center; 
+    align-self: center;
+    margin-block: var(--padding)
+}
+
+browser-window .buttons span {
+    display: inline-block; 
+    border-radius: 100vh;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: .5rem;
+}
+
+browser-window .buttons span:nth-child(1) { background: var(--red) }
+browser-window .buttons span:nth-child(2) { background: var(--yellow) }
+browser-window .buttons span:nth-child(3) { background: var(--green) }
+
+browser-window :where(.address,.page-title) { 
+    width: 100%; 
+    text-align: center; 
+    font-size: var(--browserFontSize) 
+}
+
+browser-window .address .lock { color: var(--green) }
+
+browser-window .address .group { 
+    display: inline-flex; 
+    flex-direction: row;
+    gap: 1.2rem;
+    padding: .5rem var(--padding); 
+    border-radius: var(--browserRadius); 
+    border: var(--browserBorder);
+    background: var(--inputBg);
+    color: var(--browserAddressColor);
+    box-shadow: inset var(--browserShadow);
+}
+
+browser-window .page-title { position: absolute }
+
+browser-window .tabs span { display: inline-block; padding: var(--padding) }
+browser-window .tabs {
+    display: flex; 
+    gap: var(--padding);
+    font-size: var(--browserFontSize);
+    transform: translate(10px, 2px);
+    overflow: auto
+}
+
+browser-window .tabs span.open {
+    border-top-left-radius: .6rem;
+    border-top-right-radius: .6rem;
+    border: var(--browserBorder);
+    border-bottom: 1px solid var(--bgColor);
+    background: var(--bgColor);
+}
+
+browser-window .viewport img { width: 100% }
